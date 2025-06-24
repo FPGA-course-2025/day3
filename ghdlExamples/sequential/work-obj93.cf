@@ -1,0 +1,8 @@
+v 4
+file . "seq.vhdl" "a1ad39a2ae5b6663d4c121a89724534b72dd2921" "20250617133549.601":
+  entity priority at 1( 0) + 0 on 23;
+  architecture concurrent of priority at 9( 186) + 0 on 24;
+  architecture sequential of priority at 20( 456) + 0 on 25;
+  architecture sequential2 of priority at 44( 788) + 0 on 26;
+  entity tb_priority at 66( 1128) + 0 on 27;
+  architecture test of tb_priority at 70( 1217) + 0 on 28;
