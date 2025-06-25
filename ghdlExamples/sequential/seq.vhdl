@@ -62,7 +62,6 @@ end if;
 end process;
 end architecture Sequential2;
 
--- This is a testbench for the priority encoder
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 entity tb_priority is

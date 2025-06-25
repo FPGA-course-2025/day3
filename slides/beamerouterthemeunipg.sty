@@ -1,0 +1,21 @@
+\mode<presentation>
+
+\definecolor{univblue}{RGB}{38,71,150}
+
+% Frame title
+\defbeamertemplate*{frametitle}{unipg}[1][]
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle} 
+  \begin{tikzpicture}
+  \useasboundingbox[](0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \ifx\insertframesubtitle\@empty%
+      {\node[anchor=east, univblue,font=\large] at (12,0.5){\insertframetitle};}
+      \else%
+      {\node[anchor=east, univblue,font=\large] at (12,0.5){\insertframetitle};%
+       \node[anchor=east, univblue,font=\small] at (12,0){\insertframesubtitle};}%
+      \fi
+  \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\mode<all>
