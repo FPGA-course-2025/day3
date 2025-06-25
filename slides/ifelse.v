@@ -1,8 +1,5 @@
-if( A == B )
-begin
-	C = 0;
-end
-else 
-begin
-	C = 1;
+if (condition) begin
+	// statements if condition is true
+end else begin
+	// statements if condition is false
 end

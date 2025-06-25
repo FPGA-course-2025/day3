@@ -1,5 +1,5 @@
-case (sel)
-	2'b00: out = 0;
-	2'b01: out = 1;
-	default: out = x;
+case (expression)
+	value1: statement1;
+	value2: statement2;
+	default: statement_default;
 endcase

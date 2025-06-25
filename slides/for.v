@@ -1,3 +1,8 @@
-for (i = 0; i < 16; i = i +1) begin
-	$display ("Current value of i is %d", i);
+integer i;
+reg [7:0] array [0:7];
+
+initial begin
+	for (i = 0; i < 8; i = i + 1) begin
+		array[i] = 0;
+	end
 end

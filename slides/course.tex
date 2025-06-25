@@ -66,7 +66,7 @@ extendedchars=true}
 \tableofcontents
 \end{frame} 
 
-\section{Introduction}
+\section{Verilog}
 
 \subsection{Modules}
 
@@ -121,29 +121,36 @@ Store a value in Verilog. The value is kept until assigned again (similar to a v
 \end{frame}
 
 \begin{frame}\frametitle{Numbers}
-The generic number value in Verilog is: \\
-\textless size\textgreater \lq \textless base\textgreater \textless value\textgreater \\
+Verilog allows you to specify numbers with size and base: \\
+\texttt{<size>'<base><value>} \\
 \vspace{0.5cm}
-Esempi: \\
-12 // decimal (base 10) \\
-8 \lq h5F // hexadecimal, 8 bit \\
-6 \lq b11\_0010 // binary,  6 bit \\
-\lq o576 // octal with no dimension \\
-32 \lq bz // binary a 32 bit Hi-Z \\
+\textbf{Examples:}
+\begin{itemize}
+	\item \texttt{12} \hspace{1cm} // decimal (default, base 10)
+	\item \texttt{8'h5F} \hspace{0.5cm} // 8-bit hexadecimal (0x5F)
+	\item \texttt{6'b11\_0010} \hspace{0.2cm} // 6-bit binary (0b110010)
+	\item \texttt{'o576} \hspace{0.7cm} // octal (base 8), size omitted
+\end{itemize}
 \vspace{0.3cm}
-The char \_ is ignored and can be used as separator.
+The underscore (\_) can be used as a digit separator for readability and is ignored by the compiler.
 \end{frame}
 
 \begin{frame}\frametitle{Scalars and Vectors}
-Variable can be scalar or vectors. \\
+Variables in Verilog can be either scalars (single bit) or vectors (multiple bits). \\
 \vspace{0.3cm}
-Examples: \\
-reg out; // scalar \\
-reg [7:0] databus; // 8 bit bus \\
-wire [1:0] select; // 2 bit bus \\
-wire enabled; // scalar
+\textbf{Examples:}
+\begin{itemize}
+	\item \texttt{reg out;} \hspace{1cm} % scalar (1 bit)
+	\item \texttt{reg [7:0] databus;} \hspace{0.5cm} % 8-bit vector (bus)
+	\item \texttt{wire [1:0] select;} \hspace{0.7cm} % 2-bit vector
+	\item \texttt{wire enabled;} \hspace{1.2cm} % scalar (1 bit)
+\end{itemize}
+\vspace{0.3cm}
+Vectors are defined using the syntax: \texttt{[MSB:LSB]}. For example, \texttt{[7:0]} defines an 8-bit bus from bit 7 (most significant) to bit 0 (least significant).
 \end{frame}
- 	
+
+\subsection{Assignments and Operators}
+
 \begin{frame}\frametitle{Assignment}
 	\textbf{(reg) Blocking assignment}: \\
 	A = 3; \\
@@ -167,19 +174,58 @@ wire enabled; // scalar
 \end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Flow control}\framesubtitle{If-else,  case}
+\subsection{Flow control}
+
+\begin{frame}\frametitle{Flow control}\framesubtitle{If statement in Verilog}
+The \textbf{if} statement in Verilog is used to make decisions based on conditions, similar to other programming languages.
+
+\begin{itemize}
+	\item Syntax:
 	\lstinputlisting[language=verilog]{ifelse.v}
-	\vspace{0.5cm}
-	\lstinputlisting[language=verilog]{case.v}
+	\item The \texttt{else} part is optional.
+	\item Used inside \texttt{always} or \texttt{initial} blocks.
+	\item Conditions are typically expressions involving signals or variables.
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Flow control}\framesubtitle{case statement in Verilog}
+The \textbf{case} statement in Verilog is used for multi-way branching, similar to \texttt{switch} in C/C++.
+
+\begin{itemize}
+	\item Syntax:
+\end{itemize}
+
+\lstinputlisting[language=verilog]{case.v}
+
+\begin{itemize}
+	\item Each \texttt{value} is compared to the \texttt{expression}; the matching branch is executed.
+	\item The \texttt{default} branch is optional and is executed if no values match.
+	\item Used inside \texttt{always} or \texttt{initial} blocks.
+\end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Flow control}\framesubtitle{for}
-Similar to the C,C++ for loop. no support for ++ \\
-\vspace{1cm}
+
+The \textbf{for loop} in Verilog is used to repeat 
+a block of code a fixed number of times, 
+similar to C/C++. It is
+used in \texttt{initial} or \texttt{always} blocks,
+especially for initializing arrays or generating 
+repetitive hardware structures.
+
+\begin{itemize}
+	\item Syntax: \texttt{for (initialization; condition; increment) begin ... end}
+\end{itemize}
+
 \lstinputlisting[language=verilog]{for.v}
+
+\begin{itemize}
+	\item Note: The increment must be written as \texttt{i = i + 1} (no \texttt{++} operator).
+	\item The for loop is unrolled during synthesis; it does not create a runtime loop in hardware.
+\end{itemize}
 \end{frame}
 
-\section{Live examples}
+\subsection{Live examples}
 
 \begin{frame}\frametitle{Live examples}
 \framesubtitle{General informations 1}
@@ -238,12 +284,10 @@ Let's try some improvements:
 \begin{frame}\frametitle{Led on and off}
 \framesubtitle{day3/verilog/ledonoff}
 \lstinputlisting[language=verilog]{ledonoff.v}
-\vspace{0.5cm}
-% Let's try some improvements:
-% \begin{itemize}
-% 	\item Make the counter running faster (or slower)
-% 	\item Add a reset button (with a switch or a button)
-% \end{itemize}
+\vspace{1cm}
+It seems that sometimes the led does not turn off or on. 
+What could be the problem? \\
+
 \end{frame}
 
 \begin{frame}\frametitle{Module instantiation}
@@ -360,6 +404,8 @@ between the two parts. \\
 \centering
 \includegraphics[width=0.9\textwidth]{zynq-pl-ps.jpg}
 \end{frame}
+
+\subsection{Zynq VHDL demo}
 
 \begin{frame}\frametitle{Zynq VHDL demo}
 \centering

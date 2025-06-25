@@ -1,7 +1,7 @@
-PWD /home/mirko/Github/FPGA-course-2025/day3/verilogSlides
+PWD /home/mirko/Github/FPGA-course-2025/day3/slides
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/mirko/Github/FPGA-course-2025/day3/verilogSlides/course.tex
+INPUT /home/mirko/Github/FPGA-course-2025/day3/slides/course.tex
 OUTPUT course.log
 INPUT /usr/share/texmf-site/tex/latex/beamer/base/beamer.cls
 INPUT /usr/share/texmf-site/tex/latex/beamer/base/beamer.cls
@@ -492,11 +492,6 @@ INPUT case.v
 INPUT ./for.v
 INPUT ./for.v
 INPUT for.v
-INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmtt.fd
-INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmtt.fd
-INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmtt.fd
-INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tctt0800.tfm
-INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT ./counter.v
 INPUT ./counter.v
@@ -559,6 +554,7 @@ INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss0600.tfm
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 OUTPUT course.nav
 OUTPUT course.toc
 OUTPUT course.snm
@@ -572,6 +568,6 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb
-INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb
