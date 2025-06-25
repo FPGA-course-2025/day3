@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Modules}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Blocks}{9}{0}{1}
+\beamer@subsectionintoc {1}{3}{Data}{13}{0}{1}
+\beamer@sectionintoc {2}{Live examples}{22}{0}{2}
+\beamer@sectionintoc {3}{Open Source and FPGA}{29}{0}{3}
+\beamer@subsectionintoc {3}{1}{Open Source tools for simulation}{29}{0}{3}
+\beamer@subsectionintoc {3}{2}{Open Source tools for synthesis and implementation}{30}{0}{3}
+\beamer@sectionintoc {4}{Zynq, Pynq and Alveo}{32}{0}{4}
+\beamer@subsectionintoc {4}{1}{Zynq}{32}{0}{4}
+\beamer@subsectionintoc {4}{2}{Pynq}{36}{0}{4}
+\beamer@subsectionintoc {4}{3}{Alveo}{39}{0}{4}
