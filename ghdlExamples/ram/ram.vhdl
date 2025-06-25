@@ -15,7 +15,7 @@ END ram;
 ARCHITECTURE Behavioral OF ram IS
 	TYPE ram_type IS ARRAY (31 DOWNTO 0)
 	OF STD_LOGIC_VECTOR (3 DOWNTO 0);
-	SIGNAL mem : ram_type;
+	SIGNAL mem : ram_type := (OTHERS => (OTHERS => '0'));
 	SIGNAL read_a : STD_LOGIC_VECTOR(4 DOWNTO 0);
 BEGIN
 	PROCESS (clk)
